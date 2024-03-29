@@ -17,7 +17,7 @@ func main() {
 	}
 	dependencyInjection, err := di.InitializeDI()
 	r := dependencyInjection.Router
-	r.Route("/articles", func(r chi.Router) {
+	r.Route("/id", func(r chi.Router) {
 		r.Post("/", dependencyInjection.IdController.PostId)
 		r.Get("/{id}", dependencyInjection.IdController.GetId)
 	})
